@@ -1,0 +1,105 @@
+{% extends "base_inner.html" %} {% block title %} Search {% endblock %} {%
+    block body %} {% set total = data|length %}
+  
+  
+  <!--  Section Job lists  -->
+  <section class="section section-job-lists">
+    <div class="container">
+      <div class="row">
+          <div class="col s12 m12">
+            <h2><span class="indigo-text text-darken-4">Search</span>Result</h2>
+            <h5>Your search : <b class="red-text text-darken-3">{{searchString}}</b></h5>
+            <h3>All</h3>
+          </div>
+      </div>
+      
+    <div class="card-panel grey lighten-3">
+
+    {% if total_count < 1 %} <p>No search results found.</p> <br>{% elseif pageModule == 'joblist' %}
+    
+    <div class='row'>
+  
+        {% for i in 0..(total_count) %}
+  
+        {% if data[i] is defined %}
+  
+      <div class='col s12 m12'> 
+        <div class = 'card hoverable'>
+          <div class='card-content'>
+            <span class='card-title'>#<span class="red-text">{{i+1}}</span> {{data[i].title}}</span>
+              <p><b class="red-text text-darken-2"><u>Discription</u>&nbsp:&nbsp</b>{{data[i].description}}</p>
+          </div>
+          <div class='card-content'>
+              <ul class='tabs tabs-fixed-width'>
+                <li class='tab tabjobcustom'><a href='#test1{{i+1}}'>Eligibility:</a></li>
+                <li class='tab tabjobcustom'><a href='#test2{{i+1}}'>Important Dates:</a></li>
+              </ul>
+              <div id="test1{{i+1}}">
+                <div class="red-text text-darken-2">
+                  <p><pre><b>{{data[i].eligibility}}</b></pre></p>
+                </div>
+              </div>
+              <div id="test2{{i+1}}">
+                  <div class="red-text text-darken-2">
+                    <p><pre><b>{{data[i].impdates}}</b></pre></p>
+                  </div>
+              </div>
+            </div>
+          <center><div class='card-action'><a href="{{data[i].website}}" target="_blank" class="btn btn-large red lighten-1 waves-effect">Go to Official Website!</a>     </div> </div>
+          </center>
+      </div>
+  
+        {% endif %}
+  
+      {% endfor %}
+    </div>
+      {% elseif pageModule == 'exampapers' %}
+
+      <div class="row">
+        {% for i in 0..(total_count) %}
+
+        {% if data[i] is defined %}
+        <div class="card col s12 m12 l10 offset-l1">
+          <div class="card-content">
+            #<span class="red-text">{{i+1}}</span>
+            Category: <span class="red-text">{{data[i].category}}</span> <br>
+            Year: <span class="red-text">{{data[i].year}}</span>
+            Name: <span class="red-text">{{data[i].title}}</span><br>
+            Filename: <span class="red-text">{{data[i].filename}}</span><br>
+            Detail: <span class="red-text">{% if data[i].comment == NULL %}-{% else %} {{data[i].comment}} {% endif
+              %}</span><a href="/download/{{data[i].filename}}" class="btn-floating btn-small indigo darken-4 waves-effect waves-dark right"><i
+                class="material-icons">file_download</i></a>
+          </div>
+        </div>
+        {% endif %}
+
+        {% endfor %}
+        </div>
+        {% endif %}
+      
+
+        <!-- <a href="list{{page-1}}" class="btn indigo darken-4 left {% if page==1%}disabled{%endif%}">Previous</a>
+        <a href="list{{page+1}}" class="btn indigo darken-4 right {% if list_count>=total_count%}disabled{%endif%}">Next</a> -->
+    </div>
+    </div>
+  
+  </section>
+  
+  
+    <!--Section Features-->
+    <section class="section section-features grey lighten-3">
+      <div class="container">
+        
+        <div class="center">
+          <a href="#modal1" class="btn btn-large grey modal-trigger">Subscribe For Free</a>
+          <br><br>
+          <h5>
+            <span class="deep-purple-text text-lighten-1">Have a Suggestion or Request? </span>Contact our support team
+          </h5>
+          <p>guidehubz@gmail.com</p>
+        </div>
+      </div>
+    </section>
+  
+  
+  {% endblock %}

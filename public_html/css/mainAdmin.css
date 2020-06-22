@@ -1,0 +1,109 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+}
+
+body {
+  /* font-family: 'Courgette', cursive; */
+  /* font-family: 'Vollkorn', serif; */
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.logo-underline {
+  text-decoration: underline;
+  text-decoration-color: white;
+}
+body {
+  background: white;
+}
+
+.body-section {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.alert-text {
+  text-indent: 1em;
+  background: rgba(0, 0, 0, 0);
+}
+
+.body-header {
+  background: url(/images/galaxyblack.jpg);
+  background-size: cover;
+  background-position: center;
+  min-height: 701px;
+  color: #fff;
+}
+
+.body-header .showcase {
+  padding-top: 100px;
+}
+
+.body-header-inner {
+  background: url(/images/galaxyblack.jpg);
+  background-size: cover;
+  background-position: center;
+  min-height: 350px;
+  color: #fff;
+}
+
+.body-header-inner .showcase {
+  padding-top: 50px;
+}
+
+.form-back {
+  background: rgba(0, 0, 0, 0.1);
+}
+.form-back-2 {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* label color */
+.input-field label {
+  color: #fff;
+}
+/* label focus color */
+.input-field input[type='text']:focus + label {
+  color: #fff;
+}
+/* label underline focus color */
+.input-field input[type='text']:focus {
+  border-bottom: 1px solid #fff;
+  box-shadow: 1 1px 0 0 #222;
+}
+/* valid color */
+.input-field input[type='text'].valid {
+  border-bottom: 1px solid #fff;
+  box-shadow: 0 1px 0 0 #fff;
+}
+/* invalid color */
+.input-field input[type='text'].invalid {
+  border-bottom: 1px solid #fff;
+  box-shadow: 0 1px 0 0 #fff;
+}
+/* icon prefix focus color */
+.input-field .prefix.active {
+  color: #fff;
+}
+
+.tabs .tab a {
+  color: #000;
+} /*Black color to the text*/
+
+.tabs .tab a:hover {
+  background-color: #eee;
+  color: #000;
+} /*Text color on hover*/
+
+.tabs .tab a.active {
+  background-color: #888;
+  color: #000;
+} /*Background and text color when a tab is active*/
+
+.tabs .indicator {
+  background-color: #000;
+} /*Color of underline*/

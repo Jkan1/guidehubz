@@ -1,0 +1,10 @@
+Key Features :
+
+#--Code Organised into Models, Views and Controllers.
+#--Advanced router.
+#--Classes in namespaces with autoloading.
+#--Controllers with action filters.
+#--Views including a Template engine.
+#--Models with resource-friendly database connectivity.
+#--Environment-specific confguration and error handling.
+#--Understanding how MVC framework works.

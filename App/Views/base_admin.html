@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Vollkorn:600i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:600" rel="stylesheet">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  <link type="text/css" rel="stylesheet" href="../../../css/materialize.css" media="screen, projection" />
+  <link type="text/css" rel="stylesheet" href="../../../css/mainAdmin.css" />
+  <link type="text/css" rel="stylesheet" href="../../css/materialize.css" media="screen, projection" />
+  <link type="text/css" rel="stylesheet" href="../../css/mainAdmin.css" />
+  <link type="text/css" rel="stylesheet" href="../css/materialize.css" media="screen, projection" />
+  <link type="text/css" rel="stylesheet" href="../css/mainAdmin.css" />
+  <link type="text/css" rel="stylesheet" href="/css/materialize.css" media="screen, projection" />
+  <link type="text/css" rel="stylesheet" href="/css/mainAdmin.css" />
+  <link href="https://fonts.googleapis.com/css?family=Gamja+Flower" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:600" rel="stylesheet">
+
+  <link rel="icon" type="image/png" href="images/icon.png">
+  <link rel="icon" type="image/png" href="/images/icon.png">
+  <link rel="icon" type="image/png" href="../images/icon.png">
+  <link rel="icon" type="image/png" href="../../images/icon.png">
+  <link rel="icon" type="image/png" href="../../../images/icon.png">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <style>
+    .tabs .tab a{
+            color:#000;
+        } /*Black color to the text*/
+
+        .tabs .tab a:hover {
+            background-color:#eee;
+            color:#000;
+        } /*Text color on hover*/
+
+        .tabs .tab a.active {
+            background-color:#888;
+            color:#000;
+        } /*Background and text color when a tab is active*/
+
+        .tabs .indicator {
+            background-color:#000;
+        } /*Color of underline*/
+      </style>
+
+  <title>{% block title %}{% endblock %}</title>
+</head>
+
+<body>
+
+
+
+  <!--Header-->
+  <div class="body-header">
+    <nav class="transparent">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="/" class="brand-logo">GuideHub<span class="pink-text text-lighten-2">Z</span></a>
+          <a href="#" data-activates="mobile-nav" class="button-collapse">
+            <i class="fa fa-bars"></i>
+          </a>
+          <ul class="right hide-on-med-and-down">
+            <li>
+              <a href="/">Home</a>
+            </li>
+            <li>
+              <a href="/Home/aboutus">About Us</a>
+            </li>
+            <li>
+              <a href="/Exampapers">Exam Papers</a>
+            </li>
+            <li>
+              <a href="/Joblist">Job Listings</a>
+            </li>
+            <li>
+              <a href="https://facebook.com">
+                <i class="fab fa-facebook"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://twitter.com">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/guidehubz/">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </li>
+          </ul>
+
+          <ul class="side-nav" id="mobile-nav">
+            <h4 class="black center">
+              GuideHub<span class="pink-text text-lighten-2">Z</span></h4>
+            <li>
+              <div class="divider"></div>
+            </li>
+            <li>
+              <a href="/">
+                <i class="fa fa-home grey-text text-darken-4"></i> Home</a>
+            </li>
+            <li>
+              <a href="/Home/aboutus">
+                <i class="fa fa-cog grey-text text-darken-4"></i> About Us</a>
+            </li>
+            <li>
+              <a href="/Exampapers">
+                <i class="fa fa-users grey-text text-darken-4"></i> Exam Papers</a>
+            </li>
+            <li>
+              <a href="/Joblist">
+                <i class="fa fa-users grey-text text-darken-4"></i> Job Listings</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    {% block body %} {% endblock %}
+  </div>
+
+
+
+
+
+
+  <!--Footer-->
+  <footer class="page-footer black">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">About Us</h5>
+          <p class="grey-text text-lighten-4">The primary goal of the website is to reduce unemployment and provide support with sufficient information as well as content related to vacancies of government as well as private sector</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Links</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="/">Home</a></li>
+            <li><a class="grey-text text-lighten-3" href="/Home/aboutus">About Us</a></li>
+            <li><a class="grey-text text-lighten-3" href="/Home/aboutus">Contact</a></li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        GuideHubZ © 2018-19 Copyright
+        <a class="grey-text text-lighten-4 right" href="#!">Terms & Condtions</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <form action="/Subscribe" method="post" onSubmit="return SubscribeFun()">
+        <div class="input-field">
+          <input type="email" name="email" id="email">
+          <label for="email">Your email</label>
+        </div>
+        <button name="submit" class="waves-effect waves-indigo btn-flat indigo-text text-darken-4 right">Subscribe</button>
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat ">Cancel</a>
+      </form>
+    </div>
+    <!--<div class="modal-footer"></div>-->
+  </div>
+
+
+  <!--<script type="text/javascript" src="js/jquery-3.3.1.js"></script>-->
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/js/materialize.js"></script>
+  <!--<script type="text/javascript" src="js/materialize.js"></script>
+  <script type="text/javascript" src="../js/materialize.js"></script>
+  <script type="text/javascript" src="../../js/materialize.js"></script>
+  <script type="text/javascript" src="../../../js/materialize.js"></script>-->
+  <script>
+    $(document).ready(function () {
+      $('.button-collapse').sideNav();
+      $('select').material_select();
+      $('.tabs').tabs();
+      $('textarea#message').characterCounter();
+      $('.modal').modal({
+        inDuration: 1000,
+        dismissible: false,
+        startingTop: '80%',
+        endingTop: '20%',
+        preventScrolling: true,
+      }
+      );
+    });
+    $("submit").click(function (event) {
+      event.preventDefault();
+    });
+
+    function SubscribeFun() {
+      var email = document.getElementById('email').value;
+      if (/^([A-Za-z0-9_\-\.])+\@(gmail|GMAIL)\.(com|COM)$/.test(email)) {
+        return true;
+      }
+      alert("You have entered an invalid email address!");
+      return false;
+    }
+
+  </script>
+
+</body>
+
+</html>

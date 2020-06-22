@@ -1,0 +1,260 @@
+{% extends "base_inner.html" %} {% block title %} Exam Papers {% endblock %} {%
+block body %} {% set total = data|length %}
+<!--
+  Section Paper links
+  <section class="section section-exam-papers-list">
+
+    <div class="container ">
+
+      <div class="row">
+
+        <div class="col s12 m12">
+
+          <h3><span class="indigo-text text-darken-4">Exam</span>Papers</h3>
+
+          <p>Here you can download all the latest exam papers of prevously held examinations.</p>
+
+        </div>
+
+      </div>
+
+      <div class="  grey lighten-3">
+
+        <span class="red lighten-3 blue-text text-darken-4">Info For Developer : total:{{ total }} total_count:{{
+
+          total_count }} page:{{ page }}
+
+          list_count:{{ list_count }} </span>
+
+        <div class="row">
+
+          {% for i in (list_count-10)..list_count-1 %}
+
+  
+
+          {% if data[i] is defined %}
+
+          <div class="card col s12 m12 l10 offset-l1">
+
+            <div class="card-content">
+
+              #<span class="red-text">{{i+1}}</span>
+
+              Category: <span class="red-text">{{data[i].category}}</span> <br>
+
+              Year: <span class="red-text">{{data[i].year}}</span>
+
+              Name: <span class="red-text">{{data[i].name}}</span><br>
+
+              Filename: <span class="red-text">{{data[i].filename}}</span><br>
+
+              Comment: <span class="red-text">{% if data[i].comment == NULL %}-{% else %} {{data[i].comment}} {% endif %}</span><a
+
+                href="/download/{{data[i].filename}}" class="btn-floating btn-small indigo darken-4 waves-effect waves-dark right"><i
+
+                  class="material-icons">file_download</i></a>
+
+            </div>
+
+          </div>
+
+          {% endif %}
+
+  
+
+          {% endfor %}
+
+  
+
+        </div>
+
+  
+
+        <a href="/Exampapers/list{{page-1}}" class="btn indigo darken-4 left {% if page==1%}disabled{%endif%}">Previous</a>
+
+        <a href="/Exampapers/list{{page+1}}" class="btn indigo darken-4 right {% if list_count>=total_count%}disabled{%endif%}">Next</a>
+
+      </div>
+
+    </div>
+
+  </section>
+-->
+
+<div class="container">
+  <div class="row">
+    <br>
+    <div class="col s12 m6">
+      <h2><span class="indigo-text text-darken-4">Exam</span>Papers</h2>
+      <p>
+        Here you can download all the latest exam papers of prevously held
+        examinations.
+      </p>
+    </div>
+
+    <div class="col s12 m6">
+      <form action="" method="GET">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">search</i>
+          <input type="text" id="search" name="search">
+          <label for="search">Search</label>
+        </div>
+      </form>
+  </div>
+
+    <div class="col s12 m12"><h3>Select Category</h3></div>
+  </div>
+
+
+  <div class="row">
+   
+   
+    <div class="col s12 m4">
+      <center>
+        <div class="card cardsquare grey lighten-3 center black-text">
+          <a href="/exampapers/upsc">
+            <div class="card-image"><img src="/images/upsc.png" alt="" /></div>
+            <h5 class="grey-text text-darken-4">UPSC</h5>
+          </a>
+        </div>
+      </center>
+    </div>
+    <div class="col s12 m4">
+      <center>
+        <div class="card cardsquare grey lighten-3 center black-text">
+          <a href="/exampapers/ssc">
+            <div class="card-image"><img src="/images/ssc.png" alt="" /></div>
+            <h5 class="grey-text text-darken-4">SSC</h5>
+          </a>
+        </div>
+      </center>
+    </div>
+    <div class="col s12 m4">
+      <center>  
+        <div class="card cardsquare grey lighten-3 center black-text">
+          <a href="/exampapers/cds">
+            <div class="card-image"><img src="/images/cds.png" alt="" /></div>
+            <h5 class="grey-text text-darken-4">CDS</h5>
+          </a>
+        </div>
+      </center>
+    </div>
+    <div class="col s12 m4">
+      <center>
+        <div class="card cardsquare grey lighten-3 center black-text">
+          <a href="/exampapers/afcat">
+            <div class="card-image"><img src="/images/afcat.png" alt="" /></div>
+            <h5 class="grey-text text-darken-4">AFCAT</h5>
+          </a>
+        </div>
+      </center>
+    </div>
+    <div class="col s12 m4">
+      <center>  
+        <div class="card cardsquare grey lighten-3 center black-text">
+          <a href="/exampapers/railway">
+            <div class="card-image"><img src="/images/railway.png" alt="" /></div>
+            <h5 class="grey-text text-darken-4">Railway</h5>
+          </a>
+        </div>
+      </center>
+    </div>
+    <div class="col s12 m4">
+      <center>
+        <div class="card cardsquare grey lighten-3 center black-text">
+          <a href="/exampapers/bankpo">
+            <div class="card-image"><img src="/images/bankpo.png" alt="" /></div>
+            <h5 class="grey-text text-darken-4">Bank PO</h5>
+          </a>
+        </div>
+      </center>
+    </div>
+    <div class="col s12 m4">
+      <center>    
+        <div class="card cardsquare grey lighten-3 center black-text">
+          <a href="/exampapers/ppsc">
+            <div class="card-image"><img src="/images/ppsc.png" alt="" /></div>
+            <h5 class="grey-text text-darken-4">PPSC</h5>
+          </a>
+        </div>
+      </center>
+    </div>
+    <div class="col s12 m4">
+      <center>
+        <div class="card cardsquare grey lighten-3 center black-text">
+          <a href="/exampapers/punjabpolice">
+            <div class="card-image"><img src="/images/punjabpolice.png" alt="" /></div>
+            <h5 class="grey-text text-darken-4">Punjab Police</h5>
+          </a>  
+        </div>
+      </center>
+    </div>
+
+    <div class="col s12 m4">
+      <center>  
+        <div class="card cardsquare grey lighten-3 center black-text">
+          <a href="/exampapers/delhipolice">
+            <div class="card-image"><img src="/images/delhipolice.png" alt="" /></div>
+            <h5 class="grey-text text-darken-4">Delhi Police</h5>
+          </a>
+        </div>
+      </center>
+    </div>
+    <div class="col s12 m4">
+      <center>  
+        <div class="card cardsquare grey lighten-3 center black-text">
+          <a href="/exampapers/private">
+            <div class="card-image"><img src="/images/private.png" alt="" /></div>
+            <h5 class="grey-text text-darken-4">Private</h5>
+          </a>
+        </div>
+      </center>
+    </div>
+
+    <div class="col s12 m4">
+      <center>
+        <div class="card cardsquare grey lighten-3 center black-text">
+          <a href="/exampapers/mppsc">
+            <div class="card-image"><img src="/images/mppsc.png" alt="" /></div>
+            <h5 class="grey-text text-darken-4">MPPSC</h5>       
+          </a>
+        </div>
+      </center>
+    </div>
+    <div class="col s12 m4">
+      <center>
+        <div class="card cardsquare grey lighten-3 center black-text">
+          <a href="/exampapers/uppsc">
+            <div class="card-image"><img src="/images/uppsc.png" alt="" /></div>
+            <h5 class="grey-text text-darken-4">UPPSC</h5>
+          </a>
+        </div>
+      </center>
+    </div>
+
+  </div>
+</div>
+
+<!-- Section Podcast -->
+<section class="section section-podcast white-text">
+  <div class="primary-overlay valign-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col s12 m8">
+          <h4>Get The Latest Updates</h4>
+          <p>Weekly update notifications to your mail</p>
+        </div>
+        <div class="col s12 m4">
+          <a
+            class="btn white indigo-text text-darken-4 btn-larger modal-trigger"
+            href="#modal1"
+          >
+            Subscribe<i class="material-icons  right"> notifications_active</i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

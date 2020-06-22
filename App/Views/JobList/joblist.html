@@ -1,0 +1,101 @@
+{% extends "base_inner.html" %} {% block title %} Job List {% endblock %} {%
+  block body %} {% set total = data|length %}
+
+
+<!--  Section Job lists  -->
+<section class="section section-job-lists">
+  <div class="container">
+    <div class="row">
+      <br>
+      <div class="col s12 m6">
+        <h2><span class="indigo-text text-darken-4">Job</span>List</h2>
+        <p>
+          In this section you can find all the latest job openings available.
+        </p>
+      </div>
+
+      <div class="col s12 m6">
+        <form action="" method="GET">
+          <div class="input-field col s12">
+            <i class="material-icons prefix">search</i>
+            <input type="text" id="search" name="search">
+            <label for="search">Search</label>
+          </div>
+        </form>
+    </div>
+  </div>
+  <br>  
+
+  <div class="card-panel grey lighten-3">
+
+    <!--<span class="red lighten-3 blue-text text-darken-4">Info For Developer : total:{{ total }} total_count:{{
+      total_count }} page:{{ page }}
+      list_count:{{ list_count }} </span>-->
+  
+  {% if total_count < 1 %} <p>No updates yet in this section.</p>{% endif %}
+  
+  <div class='row'>
+
+      {% for i in (list_count-10)..list_count-1 %}
+
+      {% if data[i] is defined %}
+
+    <div class='col s12 m12'> 
+  
+      <div class = 'card hoverable'>
+        <div class='card-content'>
+          
+          <span class='card-title'>#<span class="red-text">{{i+1}}</span> {{data[i].title}}</span>
+            <p><b class="red-text text-darken-2"><u>Discription</u>&nbsp:&nbsp</b>{{data[i].description}}</p>
+        </div>
+        <div class='card-content'>
+            <ul class='tabs tabs-fixed-width'>
+              <li class='tab tabjobcustom'><a href='#test1{{i+1}}'>Eligibility:</a></li>
+              <li class='tab tabjobcustom'><a href='#test2{{i+1}}'>Important Dates:</a></li>
+            </ul>
+            <div id="test1{{i+1}}">
+              <div class="red-text text-darken-2">
+                <p><pre><b>{{data[i].eligibility}}</b></pre></p>
+              </div>
+            </div>
+            <div id="test2{{i+1}}">
+                <div class="red-text text-darken-2">
+                  <p><pre><b>{{data[i].impdates}}</b></pre></p>
+                </div>
+            </div>
+          </div>
+        <center><div class='card-action'><a href="{{data[i].website}}" target="_blank" class="btn btn-large red lighten-1 waves-effect">Go to Official Website!</a>     </div> </div>
+        </center>
+    </div>
+
+      {% endif %}
+
+    {% endfor %}
+  </div>
+
+      <a href="/Joblist/list{{page-1}}" class="btn indigo darken-4 left {% if page==1%}disabled{%endif%}">Previous</a>
+      <a href="/Joblist/list{{page+1}}" class="btn indigo darken-4 right {% if list_count>=total_count%}disabled{%endif%}">Next</a>
+
+  </div>
+
+  </div>
+</section>
+
+
+  <!--Section Features-->
+  <section class="section section-features grey lighten-3">
+    <div class="container">
+      
+      <div class="center">
+        <a href="#modal1" class="btn btn-large grey modal-trigger">Subscribe For Free</a>
+        <br><br>
+        <h5>
+          <span class="deep-purple-text text-lighten-1">Have a Suggestion or Request? </span>Contact our support team
+        </h5>
+        <p>guidehubz@gmail.com</p>
+      </div>
+    </div>
+  </section>
+
+
+{% endblock %}

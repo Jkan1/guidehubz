@@ -1,0 +1,20 @@
+[15-Nov-2018 19:57:07 Europe/Berlin] Uncaught exception: 'Exception' with message: 'No Route found.'
+Stack trace: #0 C:\PROJECTS\GuideHubz\public_html\index.php(48): Core\Router->dispatch('Home/images/ico...')
+#1 {main}
+Thrown in 'C:\PROJECTS\GuideHubz\Core\Router.php' on line 129
+[15-Nov-2018 20:15:08 Europe/Berlin] Uncaught exception: 'ErrorException' with message: 'mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set()'
+Stack trace: #0 [internal function]: Core\Error::errorHandler(2, 'mail(): Failed ...', 'C:\\PROJECTS\\Gui...', 36, Array)
+#1 C:\PROJECTS\GuideHubz\App\Controllers\Subscribe.php(36): mail('kasdkand@gmail....', 'Welcome | Guide...', 'Your Subscripti...', 'From: GuideHubZ...', '-f GuideHubZ <n...')
+#2 C:\PROJECTS\GuideHubz\Core\Controller.php(19): App\Controllers\Subscribe->before()
+#3 C:\PROJECTS\GuideHubz\Core\Router.php(118): Core\Controller->__call('index', Array)
+#4 C:\PROJECTS\GuideHubz\public_html\index.php(48): Core\Router->dispatch('Subscribe')
+#5 {main}
+Thrown in 'C:\PROJECTS\GuideHubz\App\Controllers\Subscribe.php' on line 36
+[15-Nov-2018 20:15:48 Europe/Berlin] Uncaught exception: 'ErrorException' with message: 'mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set()'
+Stack trace: #0 [internal function]: Core\Error::errorHandler(2, 'mail(): Failed ...', 'C:\\PROJECTS\\Gui...', 36, Array)
+#1 C:\PROJECTS\GuideHubz\App\Controllers\Subscribe.php(36): mail('kasdkand@gmail....', 'Welcome | Guide...', 'Your Subscripti...', 'From: GuideHubZ...', '-f GuideHubZ <n...')
+#2 C:\PROJECTS\GuideHubz\Core\Controller.php(19): App\Controllers\Subscribe->before()
+#3 C:\PROJECTS\GuideHubz\Core\Router.php(118): Core\Controller->__call('index', Array)
+#4 C:\PROJECTS\GuideHubz\public_html\index.php(48): Core\Router->dispatch('Subscribe')
+#5 {main}
+Thrown in 'C:\PROJECTS\GuideHubz\App\Controllers\Subscribe.php' on line 36
